@@ -432,6 +432,7 @@ class Response(object):
         if cookie:
             for line in cookie.split("\n"):
                 name, value = line.split(": ", 1)
+                name = name.strip('\r')
                 self.header_list.append((name, value))
     
     dbltrace = "\n===First Error===\n\n%s\n\n===Second Error===\n\n%s\n\n"
